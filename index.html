@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Cafe | Kuchaman</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#fffaf3;color:#292018}
+header{background:#261810;color:white;padding:24px 16px;text-align:center}
+header h1{font-size:34px;margin:5px}
+header p{color:#e9c9a4}
+nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:14px;background:#fff;position:sticky;top:0}
+nav a{color:#4a2b1b;text-decoration:none;font-weight:bold;font-size:14px}
+.hero{text-align:center;padding:55px 20px;background:linear-gradient(135deg,#f4dfc4,#fff8ed)}
+.hero h2{font-size:32px;margin:0 0 12px}
+.btn{display:inline-block;background:#7b4226;color:white;padding:13px 19px;border-radius:8px;text-decoration:none;margin:6px;font-weight:bold}
+section{padding:32px 16px;max-width:950px;margin:auto}
+h2{text-align:center;color:#6e3820}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+.item{background:white;padding:17px;border-radius:12px;box-shadow:0 2px 10px #0000000d}
+.item h3{margin:0 0 8px;font-size:17px}
+.price{color:#8b4b25;font-weight:bold}
+.note{text-align:center;color:#74675c;font-size:13px}
+.actions{text-align:center}
+footer{background:#261810;color:white;text-align:center;padding:25px 15px}
+footer a{color:#f4d2a9}
+</style>
+</head>
+<body>
+
+<header>
+<h1>☕ CITY CAFE</h1>
+<p>Your favourite place for food, cakes & good times</p>
+<p>📍 Kuchaman City · Open 9 AM – 10:30 PM</p>
+</header>
+
+<nav>
+<a href="#menu">Menu</a>
+<a href="#offers">Offers</a>
+<a href="#location">Location</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+<h2>Good Food. Great Moments.</h2>
+<p>Enjoy your favourite bites and make every visit special.</p>
+<a class="btn" href="#menu">Explore Menu</a>
+<a class="btn" href="#contact">Contact Us</a>
+</div>
+
+<section id="menu">
+<h2>Our Menu</h2>
+<div class="grid">
+<div class="item"><h3>🍜 Maggi</h3><p class="price">₹100–₹130</p></div>
+<div class="item"><h3>🍝 Noodles / Chowmein</h3><p class="price">₹150–₹180</p></div>
+<div class="item"><h3>🥣 Soup</h3><p class="price">₹100–₹120</p></div>
+<div class="item"><h3>🎂 Party Cake</h3><p class="price">1 Pound ₹300<br>2 Pound ₹500</p></div>
+<div class="item"><h3>🍦 Ice Cream</h3><p class="price">₹100–₹150</p></div>
+<div class="item"><h3>🍽️ Thali</h3><p class="price">₹170 / ₹180 / ₹200</p></div>
+</div>
+<p class="note">Please confirm item availability and prices with the cafe.</p>
+</section>
+
+<section id="offers">
+<h2>Special Offers 🎉</h2>
+<div class="item" style="text-align:center">
+<p>Visit City Cafe with your friends and family!</p>
+<p class="note">Ask the cafe about current offers.</p>
+</div>
+</section>
+
+<section id="location">
+<h2>Find Us</h2>
+<div class="actions">
+<a class="btn" href="https://maps.app.goo.gl/7TbYDZcCWqv4UsVPA" target="_blank">📍 Open Google Maps</a>
+<a class="btn" href="https://www.instagram.com/city_cafe_kuchaman__/" target="_blank">📸 Instagram</a>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact City Cafe</h2>
+<p class="note">Call or WhatsApp us for enquiries.</p>
+<div class="actions">
+<a class="btn" id="callBtn" href="tel:YOURNUMBER">📞 Call Now</a>
+<a class="btn" id="waBtn" href="https://wa.me/YOURNUMBER">💬 WhatsApp</a>
+</div>
+<p class="note">Contact number will be updated here.</p>
+</section>
+
+<footer>
+<h3>☕ CITY CAFE</h3>
+<p>Kuchaman City · 9 AM – 10:30 PM</p>
+<p>Follow us on <a href="https://www.instagram.com/city_cafe_kuchaman__/" target="_blank">Instagram</a></p>
+<p class="note">Website demo · Menu and contact details subject to confirmation.</p>
+</footer>
+
+</body>
+</html>
