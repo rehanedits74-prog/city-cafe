@@ -1,99 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>City Cafe | Kuchaman</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#fffaf3;color:#292018}
-header{background:#261810;color:white;padding:24px 16px;text-align:center}
-header h1{font-size:34px;margin:5px}
-header p{color:#e9c9a4}
-nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:14px;background:#fff;position:sticky;top:0}
-nav a{color:#4a2b1b;text-decoration:none;font-weight:bold;font-size:14px}
-.hero{text-align:center;padding:55px 20px;background:linear-gradient(135deg,#f4dfc4,#fff8ed)}
-.hero h2{font-size:32px;margin:0 0 12px}
-.btn{display:inline-block;background:#7b4226;color:white;padding:13px 19px;border-radius:8px;text-decoration:none;margin:6px;font-weight:bold}
-section{padding:32px 16px;max-width:950px;margin:auto}
-h2{text-align:center;color:#6e3820}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
-.item{background:white;padding:17px;border-radius:12px;box-shadow:0 2px 10px #0000000d}
-.item h3{margin:0 0 8px;font-size:17px}
-.price{color:#8b4b25;font-weight:bold}
-.note{text-align:center;color:#74675c;font-size:13px}
-.actions{text-align:center}
-footer{background:#261810;color:white;text-align:center;padding:25px 15px}
-footer a{color:#f4d2a9}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#24150f">
+  <meta name="description" content="Welcome to City Cafe. Explore our menu, visit us, and discover your favourite food.">
+  <title>City Cafe | Good Food, Good Moments</title>
+
+  <style>
+    :root {
+      --brown: #24150f;
+      --brown-light: #42291e;
+      --cream: #f8f0e4;
+      --gold: #c79b54;
+      --text: #302017;
+      --muted: #756458;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--brown);
+      color: #f7ead7;
+      text-align: center;
+      padding: 9px 12px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    header {
+      background: var(--brown);
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #76532f;
+    }
+
+    .brand {
+      color: white;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f6eadd;
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(36,21,15,.94), rgba(36,21,15,.62)),
+        url("https://i.postimg.cc/qRL4pM4G/IMG-a7e6e46a-935f-45bb-8f85-933b7001708d.webp")
+        center/cover;
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      padding: 65px 8%;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 66px);
+      line-height: 1.08;
+      margin: 16px 0;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: #f1e2d2;
+      max-width: 460px;
+      font-size: 15px;
+      margin-bottom: 27px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: #21140d;
+      padding: 12px 21px;
+      margin: 4px 8px 4px 0;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 3px;
+    }
+
+    .button.outline {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: white;
+    }
+
+    section {
+      padding: 65px 7%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-heading .eyebrow {
+      color: #96703a;
+    }
+
+    h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      color: var(--brown);
+      margin-top: 7px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 7px;
+      font-size: 14px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .photo {
+      background: white;
+      padding: 8px;
+      border: 1px solid #e5d5bf;
+      box-shadow: 0 8px 25px rgba(54, 32, 20, .08);
+    }
+
+    .photo img {
+      display: block;
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      background: #eadfce;
+    }
+
+    .menu-section {
+      background: #efe2d0;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .menu-card {
+      background: #fffaf3;
+      border: 1px solid #e3d0b6;
+      padding: 22px;
+      border-radius: 5px;
+    }
+
+    .menu-card h3 {
+      color: var(--brown);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .menu-card p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .price {
+      color: #91642c;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+
+    .visit {
+      background: var(--brown);
+      color: white;
+      text-align: center;
+    }
+
+    .visit h2 {
+      color: white;
+    }
+
+    .visit p {
+      color: #ead9c6;
+      margin: 12px auto;
+      font-size: 14px;
+    }
+
+    .visit .button.outline {
+      margin-top: 12px;
+    }
+
+    footer {
+      background: #180e0a;
+      color: #cdbba9;
+      text-align: center;
+      padding: 22px 12px;
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 700px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 13px;
+      }
+
+      .hero {
+        min-height: 400px;
+        padding: 50px 7%;
+      }
+
+      section {
+        padding: 48px 5%;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .photo img {
+        height: 280px;
+      }
+
+      .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .menu-card {
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-<h1>☕ CITY CAFE</h1>
-<p>Your favourite place for food, cakes & good times</p>
-<p>📍 Kuchaman City · Open 9 AM – 10:30 PM</p>
-</header>
+  <div class="topbar">
+    GOOD FOOD · GREAT MOMENTS · CITY CAFE
+  </div>
 
-<nav>
-<a href="#menu">Menu</a>
-<a href="#offers">Offers</a>
-<a href="#location">Location</a>
-<a href="#contact">Contact</a>
-</nav>
+  <header>
+    <a class="brand" href="#home">CITY <span>CAFE.</span></a>
 
-<div class="hero">
-<h2>Good Food. Great Moments.</h2>
-<p>Enjoy your favourite bites and make every visit special.</p>
-<a class="btn" href="#menu">Explore Menu</a>
-<a class="btn" href="#contact">Contact Us</a>
-</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#menu">Menu</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+  </header>
 
-<section id="menu">
-<h2>Our Menu</h2>
-<div class="grid">
-<div class="item"><h3>🍜 Maggi</h3><p class="price">₹100–₹130</p></div>
-<div class="item"><h3>🍝 Noodles / Chowmein</h3><p class="price">₹150–₹180</p></div>
-<div class="item"><h3>🥣 Soup</h3><p class="price">₹100–₹120</p></div>
-<div class="item"><h3>🎂 Party Cake</h3><p class="price">1 Pound ₹300<br>2 Pound ₹500</p></div>
-<div class="item"><h3>🍦 Ice Cream</h3><p class="price">₹100–₹150</p></div>
-<div class="item"><h3>🍽️ Thali</h3><p class="price">₹170 / ₹180 / ₹200</p></div>
-</div>
-<p class="note">Please confirm item availability and prices with the cafe.</p>
-</section>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Welcome to City Cafe</div>
+        <h1>Good Food.<br><span>Good Moments.</span></h1>
+        <p>
+          Your place to enjoy delicious food, sweet treats
+          and memorable moments with friends and family.
+        </p>
 
-<section id="offers">
-<h2>Special Offers 🎉</h2>
-<div class="item" style="text-align:center">
-<p>Visit City Cafe with your friends and family!</p>
-<p class="note">Ask the cafe about current offers.</p>
-</div>
-</section>
+        <a class="button" href="#menu">EXPLORE MENU</a>
+        <a class="button outline"
+           href="https://maps.app.goo.gl/7TbYDZcCWqv4UsVPA"
+           target="_blank" rel="noopener">
+          FIND US
+        </a>
+      </div>
+    </section>
 
-<section id="location">
-<h2>Find Us</h2>
-<div class="actions">
-<a class="btn" href="https://maps.app.goo.gl/7TbYDZcCWqv4UsVPA" target="_blank">📍 Open Google Maps</a>
-<a class="btn" href="https://www.instagram.com/city_cafe_kuchaman__/" target="_blank">📸 Instagram</a>
-</div>
-</section>
+    <section id="gallery">
+      <div class="section-heading">
+        <div class="eyebrow">A glimpse of our cafe</div>
+        <h2>Our Gallery</h2>
+        <p>A little look at City Cafe.</p>
+      </div>
 
-<section id="contact">
-<h2>Contact City Cafe</h2>
-<p class="note">Call or WhatsApp us for enquiries.</p>
-<div class="actions">
-<a class="btn" id="callBtn" href="tel:YOURNUMBER">📞 Call Now</a>
-<a class="btn" id="waBtn" href="https://wa.me/YOURNUMBER">💬 WhatsApp</a>
-</div>
-<p class="note">Contact number will be updated here.</p>
-</section>
+      <div class="gallery">
+        <div class="photo">
+          <img
+            src="https://i.postimg.cc/qRL4pM4G/IMG-a7e6e46a-935f-45bb-8f85-933b7001708d.webp"
+            alt="City Cafe photo one"
+            loading="lazy">
+        </div>
 
-<footer>
-<h3>☕ CITY CAFE</h3>
-<p>Kuchaman City · 9 AM – 10:30 PM</p>
-<p>Follow us on <a href="https://www.instagram.com/city_cafe_kuchaman__/" target="_blank">Instagram</a></p>
-<p class="note">Website demo · Menu and contact details subject to confirmation.</p>
-</footer>
+        <div class="photo">
+          <img
+            src="https://i.postimg.cc/C1fr4c6n/IMG-206e76c4-5e73-46b1-9eb2-38affae0406a.webp"
+            alt="City Cafe photo two"
+            loading="lazy">
+        </div>
+
+        <div class="photo">
+          <img
+            src="https://i.postimg.cc/jdT3zQ6C/IMG-d5524845-916c-422c-8a7e-22910a185ab0.webp"
+            alt="City Cafe photo three"
+            loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-heading">
+        <div class="eyebrow">Made for your cravings</div>
+        <h2>Our Menu</h2>
+        <p>Explore some of our popular options.</p>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-card">
+          <h3>Maggi</h3>
+          <p>A comforting favourite for any time of day.</p>
+          <div class="price">₹100–₹130</div>
+        </article>
+
+        <article class="menu-card">
+          <h3>Noodles / Chowmein</h3>
+          <p>Delicious noodles for your cravings.</p>
+          <div class="price">₹150–₹180</div>
+        </article>
+
+        <article class="menu-card">
+          <h3>Soup</h3>
+          <p>A warm and comforting choice.</p>
+          <div class="price">₹100–₹120</div>
+        </article>
+
+        <article class="menu-card">
+          <h3>Party Cakes</h3>
+          <p>1 pound — ₹300<br>2 pounds — ₹500</p>
+          <div class="price">From ₹300</div>
+        </article>
+
+        <article class="menu-card">
+          <h3>Ice Cream</h3>
+          <p>A sweet treat to finish your meal.</p>
+          <div class="price">₹100–₹150</div>
+        </article>
+
+        <article class="menu-card">
+          <h3>Thali</h3>
+          <p>Available options: ₹170, ₹180 and ₹200.</p>
+          <div class="price">From ₹170</div>
+        </article>
+      </div>
+
+      <p class="note">
+        Please confirm item availability and prices with the cafe.
+      </p>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="eyebrow">Come say hello</div>
+      <h2>Visit City Cafe</h2>
+      <p>Open daily · 9:00 AM – 10:30 PM</p>
+
+      <a class="button"
+         href="https://maps.app.goo.gl/7TbYDZcCWqv4UsVPA"
+         target="_blank" rel="noopener">
+        OPEN GOOGLE MAPS
+      </a>
+
+      <br>
+
+      <a class="button outline"
+         href="https://www.instagram.com/city_cafe_kuchaman__?psln=MXB4eGN0NWRvbjE5OA=="
+         target="_blank" rel="noopener">
+        FOLLOW ON INSTAGRAM
+      </a>
+
+      <p>We look forward to welcoming you!</p>
+    </section>
+  </main>
+
+  <footer>
+    <strong>CITY CAFE.</strong><br>
+    Good Food, Good Moments.<br>
+    © <span id="year"></span> City Cafe
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
